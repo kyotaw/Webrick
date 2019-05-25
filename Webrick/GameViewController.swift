@@ -1,0 +1,116 @@
+//
+//  GameViewController.swift
+//  Webrick
+//
+//  Created by kyota on 2019/05/24.
+//  Copyright © 2019 kyotaw. All rights reserved.
+//
+
+import UIKit
+import SpriteKit
+import GameplayKit
+import WebKit
+
+func loadScript(name: String) -> String {
+    var jsSource = ""
+    let path = Bundle.main.path(forResource: name, ofType: "js")!
+    if let data = NSData(contentsOfFile: path){
+        jsSource = String(NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue)!)
+    }
+    return jsSource
+}
+
+class GameViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
+    
+    /*
+    override func loadView() {
+        let jsSource = loadScript(name: "js/init")
+        
+        // WKUserScriptを作成、injectionTimeにJavaScriptを実行するタイミングを指定します
+        let userScript1 = WKUserScript(source: jsSource, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: true)
+        
+        let controller = WKUserContentController()
+        controller.addUserScript(userScript1)
+        controller.add(self, name: JsHandler.initHandler.rawValue)
+        
+        let webConfiguration = WKWebViewConfiguration()
+        webConfiguration.userContentController = controller
+        
+        self.webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        self.webView.uiDelegate = self
+        self.view = webView
+    }
+    */
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //let myURL = URL(string:"https://www.apple.com")
+        //let myRequest = URLRequest(url: myURL!)
+        //webView.load(myRequest)
+        
+        if let view = self.view as! SKView? {
+            // Load the SKScene from 'GameScene.sks'
+            if let scene = SKScene(fileNamed: "GameScene") {
+                // Set the scale mode to scale to fit the window
+                scene.scaleMode = .aspectFill
+                
+                // Present the scene
+                view.presentScene(scene)
+            }
+            
+            view.ignoresSiblingOrder = true
+            
+            view.showsFPS = true
+            view.showsNodeCount = true
+            
+            
+            let jsSource = loadScript(name: "js/init")
+            
+            // WKUserScriptを作成、injectionTimeにJavaScriptを実行するタイミングを指定します
+            let userScript1 = WKUserScript(source: jsSource, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: true)
+            
+            let controller = WKUserContentController()
+            controller.addUserScript(userScript1)
+            controller.add(self, name: JsHandler.initHandler.rawValue)
+            
+            let webConfiguration = WKWebViewConfiguration()
+            webConfiguration.userContentController = controller
+            
+            self.webView = WKWebView(frame: .zero, configuration: webConfiguration)
+            self.webView.uiDelegate = self
+            self.view.addSubview(self.webView)
+        }
+    }
+
+    override var shouldAutorotate: Bool {
+        return true
+    }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
+        } else {
+            return .all
+        }
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if(message.name == JsHandler.initHandler.rawValue) {
+            print(message.body)
+            let script = loadScript(name: "js/buildStage")
+            self.webView.evaluateJavaScript(script, completionHandler: buildStageHandler)
+        }
+    }
+    
+    func buildStageHandler(res: Any?, error: Error?) {
+        print(res)
+        print(error.debugDescription)
+    }
+    
+    var webView: WKWebView!
+}

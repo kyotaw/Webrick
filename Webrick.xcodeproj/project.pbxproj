@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D1F5EF12298337B0003A819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F5EF02298337B0003A819 /* AppDelegate.swift */; };
+		6D1F5EF52298337B0003A819 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F5EF42298337B0003A819 /* Actions.sks */; };
+		6D1F5EF72298337B0003A819 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F5EF62298337B0003A819 /* GameScene.swift */; };
+		6D1F5EF92298337B0003A819 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F5EF82298337B0003A819 /* GameViewController.swift */; };
+		6D1F5EFC2298337B0003A819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F5EFA2298337B0003A819 /* Main.storyboard */; };
+		6D1F5EFE2298337E0003A819 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F5EFD2298337E0003A819 /* Assets.xcassets */; };
+		6D1F5F012298337E0003A819 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F5EFF2298337E0003A819 /* LaunchScreen.storyboard */; };
+		6D1F5F0C2298337E0003A819 /* WebrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F5F0B2298337E0003A819 /* WebrickTests.swift */; };
+		6D1F5F172298337E0003A819 /* WebrickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F5F162298337E0003A819 /* WebrickUITests.swift */; };
+		6D1F5F28229843150003A819 /* js in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F5F24229843140003A819 /* js */; };
+		6D1F5F2A229843150003A819 /* JsHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F5F26229843140003A819 /* JsHandlers.swift */; };
+		6D1F5F2D2298E6B50003A819 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F5F2C2298E6B50003A819 /* GameScene.sks */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D1F5F082298337E0003A819 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D1F5EE52298337B0003A819 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D1F5EEC2298337B0003A819;
+			remoteInfo = Webrick;
+		};
+		6D1F5F132298337E0003A819 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D1F5EE52298337B0003A819 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D1F5EEC2298337B0003A819;
+			remoteInfo = Webrick;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6D1F5EED2298337B0003A819 /* Webrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Webrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1F5EF02298337B0003A819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6D1F5EF42298337B0003A819 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		6D1F5EF62298337B0003A819 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		6D1F5EF82298337B0003A819 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		6D1F5EFB2298337B0003A819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6D1F5EFD2298337E0003A819 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6D1F5F002298337E0003A819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D1F5F022298337E0003A819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D1F5F072298337E0003A819 /* WebrickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebrickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1F5F0B2298337E0003A819 /* WebrickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebrickTests.swift; sourceTree = "<group>"; };
+		6D1F5F0D2298337E0003A819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D1F5F122298337E0003A819 /* WebrickUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebrickUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1F5F162298337E0003A819 /* WebrickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebrickUITests.swift; sourceTree = "<group>"; };
+		6D1F5F182298337E0003A819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D1F5F24229843140003A819 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
+		6D1F5F26229843140003A819 /* JsHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsHandlers.swift; sourceTree = "<group>"; };
+		6D1F5F2C2298E6B50003A819 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D1F5EEA2298337B0003A819 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1F5F042298337E0003A819 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1F5F0F2298337E0003A819 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D1F5EE42298337B0003A819 = {
+			isa = PBXGroup;
+			children = (
+				6D1F5EEF2298337B0003A819 /* Webrick */,
+				6D1F5F0A2298337E0003A819 /* WebrickTests */,
+				6D1F5F152298337E0003A819 /* WebrickUITests */,
+				6D1F5EEE2298337B0003A819 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6D1F5EEE2298337B0003A819 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D1F5EED2298337B0003A819 /* Webrick.app */,
+				6D1F5F072298337E0003A819 /* WebrickTests.xctest */,
+				6D1F5F122298337E0003A819 /* WebrickUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D1F5EEF2298337B0003A819 /* Webrick */ = {
+			isa = PBXGroup;
+			children = (
+				6D1F5F24229843140003A819 /* js */,
+				6D1F5F26229843140003A819 /* JsHandlers.swift */,
+				6D1F5EF02298337B0003A819 /* AppDelegate.swift */,
+				6D1F5EF42298337B0003A819 /* Actions.sks */,
+				6D1F5EF62298337B0003A819 /* GameScene.swift */,
+				6D1F5EF82298337B0003A819 /* GameViewController.swift */,
+				6D1F5EFA2298337B0003A819 /* Main.storyboard */,
+				6D1F5EFD2298337E0003A819 /* Assets.xcassets */,
+				6D1F5EFF2298337E0003A819 /* LaunchScreen.storyboard */,
+				6D1F5F022298337E0003A819 /* Info.plist */,
+				6D1F5F2C2298E6B50003A819 /* GameScene.sks */,
+			);
+			path = Webrick;
+			sourceTree = "<group>";
+		};
+		6D1F5F0A2298337E0003A819 /* WebrickTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D1F5F0B2298337E0003A819 /* WebrickTests.swift */,
+				6D1F5F0D2298337E0003A819 /* Info.plist */,
+			);
+			path = WebrickTests;
+			sourceTree = "<group>";
+		};
+		6D1F5F152298337E0003A819 /* WebrickUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6D1F5F162298337E0003A819 /* WebrickUITests.swift */,
+				6D1F5F182298337E0003A819 /* Info.plist */,
+			);
+			path = WebrickUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D1F5EEC2298337B0003A819 /* Webrick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D1F5F1B2298337E0003A819 /* Build configuration list for PBXNativeTarget "Webrick" */;
+			buildPhases = (
+				6D1F5EE92298337B0003A819 /* Sources */,
+				6D1F5EEA2298337B0003A819 /* Frameworks */,
+				6D1F5EEB2298337B0003A819 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Webrick;
+			productName = Webrick;
+			productReference = 6D1F5EED2298337B0003A819 /* Webrick.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6D1F5F062298337E0003A819 /* WebrickTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D1F5F1E2298337E0003A819 /* Build configuration list for PBXNativeTarget "WebrickTests" */;
+			buildPhases = (
+				6D1F5F032298337E0003A819 /* Sources */,
+				6D1F5F042298337E0003A819 /* Frameworks */,
+				6D1F5F052298337E0003A819 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D1F5F092298337E0003A819 /* PBXTargetDependency */,
+			);
+			name = WebrickTests;
+			productName = WebrickTests;
+			productReference = 6D1F5F072298337E0003A819 /* WebrickTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6D1F5F112298337E0003A819 /* WebrickUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D1F5F212298337E0003A819 /* Build configuration list for PBXNativeTarget "WebrickUITests" */;
+			buildPhases = (
+				6D1F5F0E2298337E0003A819 /* Sources */,
+				6D1F5F0F2298337E0003A819 /* Frameworks */,
+				6D1F5F102298337E0003A819 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D1F5F142298337E0003A819 /* PBXTargetDependency */,
+			);
+			name = WebrickUITests;
+			productName = WebrickUITests;
+			productReference = 6D1F5F122298337E0003A819 /* WebrickUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D1F5EE52298337B0003A819 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = kyotaw;
+				TargetAttributes = {
+					6D1F5EEC2298337B0003A819 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					6D1F5F062298337E0003A819 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 6D1F5EEC2298337B0003A819;
+					};
+					6D1F5F112298337E0003A819 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 6D1F5EEC2298337B0003A819;
+					};
+				};
+			};
+			buildConfigurationList = 6D1F5EE82298337B0003A819 /* Build configuration list for PBXProject "Webrick" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6D1F5EE42298337B0003A819;
+			productRefGroup = 6D1F5EEE2298337B0003A819 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D1F5EEC2298337B0003A819 /* Webrick */,
+				6D1F5F062298337E0003A819 /* WebrickTests */,
+				6D1F5F112298337E0003A819 /* WebrickUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D1F5EEB2298337B0003A819 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D1F5EFC2298337B0003A819 /* Main.storyboard in Resources */,
+				6D1F5F28229843150003A819 /* js in Resources */,
+				6D1F5F2D2298E6B50003A819 /* GameScene.sks in Resources */,
+				6D1F5EFE2298337E0003A819 /* Assets.xcassets in Resources */,
+				6D1F5F012298337E0003A819 /* LaunchScreen.storyboard in Resources */,
+				6D1F5EF52298337B0003A819 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1F5F052298337E0003A819 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1F5F102298337E0003A819 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D1F5EE92298337B0003A819 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D1F5EF72298337B0003A819 /* GameScene.swift in Sources */,
+				6D1F5EF92298337B0003A819 /* GameViewController.swift in Sources */,
+				6D1F5F2A229843150003A819 /* JsHandlers.swift in Sources */,
+				6D1F5EF12298337B0003A819 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1F5F032298337E0003A819 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D1F5F0C2298337E0003A819 /* WebrickTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1F5F0E2298337E0003A819 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D1F5F172298337E0003A819 /* WebrickUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D1F5F092298337E0003A819 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D1F5EEC2298337B0003A819 /* Webrick */;
+			targetProxy = 6D1F5F082298337E0003A819 /* PBXContainerItemProxy */;
+		};
+		6D1F5F142298337E0003A819 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D1F5EEC2298337B0003A819 /* Webrick */;
+			targetProxy = 6D1F5F132298337E0003A819 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6D1F5EFA2298337B0003A819 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D1F5EFB2298337B0003A819 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6D1F5EFF2298337E0003A819 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D1F5F002298337E0003A819 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6D1F5F192298337E0003A819 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6D1F5F1A2298337E0003A819 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6D1F5F1C2298337E0003A819 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N5PQP73B36;
+				INFOPLIST_FILE = Webrick/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.httg1326.Webrick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6D1F5F1D2298337E0003A819 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N5PQP73B36;
+				INFOPLIST_FILE = Webrick/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.httg1326.Webrick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6D1F5F1F2298337E0003A819 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N5PQP73B36;
+				INFOPLIST_FILE = WebrickTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.httg1326.WebrickTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Webrick.app/Webrick";
+			};
+			name = Debug;
+		};
+		6D1F5F202298337E0003A819 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N5PQP73B36;
+				INFOPLIST_FILE = WebrickTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.httg1326.WebrickTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Webrick.app/Webrick";
+			};
+			name = Release;
+		};
+		6D1F5F222298337E0003A819 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N5PQP73B36;
+				INFOPLIST_FILE = WebrickUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.httg1326.WebrickUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Webrick;
+			};
+			name = Debug;
+		};
+		6D1F5F232298337E0003A819 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N5PQP73B36;
+				INFOPLIST_FILE = WebrickUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.httg1326.WebrickUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Webrick;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D1F5EE82298337B0003A819 /* Build configuration list for PBXProject "Webrick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D1F5F192298337E0003A819 /* Debug */,
+				6D1F5F1A2298337E0003A819 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D1F5F1B2298337E0003A819 /* Build configuration list for PBXNativeTarget "Webrick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D1F5F1C2298337E0003A819 /* Debug */,
+				6D1F5F1D2298337E0003A819 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D1F5F1E2298337E0003A819 /* Build configuration list for PBXNativeTarget "WebrickTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D1F5F1F2298337E0003A819 /* Debug */,
+				6D1F5F202298337E0003A819 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D1F5F212298337E0003A819 /* Build configuration list for PBXNativeTarget "WebrickUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D1F5F222298337E0003A819 /* Debug */,
+				6D1F5F232298337E0003A819 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D1F5EE52298337B0003A819 /* Project object */;
+}
