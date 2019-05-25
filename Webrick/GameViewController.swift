@@ -22,7 +22,6 @@ func loadScript(name: String) -> String {
 
 class GameViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
     
-    /*
     override func loadView() {
         let jsSource = loadScript(name: "js/init")
         
@@ -40,47 +39,31 @@ class GameViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, 
         self.webView.uiDelegate = self
         self.view = webView
     }
-    */
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let myURL = URL(string:"https://www.apple.com")
-        //let myRequest = URLRequest(url: myURL!)
-        //webView.load(myRequest)
-        
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+        let myURL = URL(string:"https://www.apple.com")
+        let myRequest = URLRequest(url: myURL!)
+        self.webView.load(myRequest)
+
+        let skview = SKView(frame: self.view.bounds)
+        // Load the SKScene from 'GameScene.sks'
+        if let scene = SKScene(fileNamed: "GameScene") {
+            // Set the scale mode to scale to fit the window
+            scene.scaleMode = .aspectFill
             
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-            
-            
-            let jsSource = loadScript(name: "js/init")
-            
-            // WKUserScriptを作成、injectionTimeにJavaScriptを実行するタイミングを指定します
-            let userScript1 = WKUserScript(source: jsSource, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: true)
-            
-            let controller = WKUserContentController()
-            controller.addUserScript(userScript1)
-            controller.add(self, name: JsHandler.initHandler.rawValue)
-            
-            let webConfiguration = WKWebViewConfiguration()
-            webConfiguration.userContentController = controller
-            
-            self.webView = WKWebView(frame: .zero, configuration: webConfiguration)
-            self.webView.uiDelegate = self
-            self.view.addSubview(self.webView)
+            // Present the scene
+            skview.presentScene(scene)
         }
+        
+        skview.ignoresSiblingOrder = true
+        
+        skview.showsFPS = true
+        skview.showsNodeCount = true
+        skview.allowsTransparency = true
+        self.view.addSubview(skview)
+    
     }
 
     override var shouldAutorotate: Bool {
