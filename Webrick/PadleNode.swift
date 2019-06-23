@@ -11,8 +11,10 @@ import SpriteKit
 
 class PadleNode : SKSpriteNode {
     
-    init(size: CGSize) {
+    init(size: CGSize, stageRect: CGRect) {
         super.init(texture: nil, color: SKColor.red, size: size)
+        
+        self.position = CGPoint(x: stageRect.midX, y: size.height)
         let physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         physicsBody.affectedByGravity = false
         physicsBody.linearDamping = 0

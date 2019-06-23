@@ -17,12 +17,14 @@ class WebrickGame: NSObject, SKSceneDelegate {
         self.playScene = PlayScene(size: stageSize)
         
         // load padle
-        let padleNode = PadleNode(size: CGSize(width: 20, height: 5))
+        let padleSize = CGSize(width: stageSize.width / 5, height: stageSize.height / 20)
+        let padleNode = PadleNode(size: padleSize, stageRect: stageRect)
         let padleEntity = PadleEntity(node: padleNode)
         self.playScene.addChild(padleNode)
         
         // load ball
-        let ballNode = BallNode(size: CGSize(width: 100, height: 100))
+        let ballSize = CGSize(width: 100, height: 100)
+        let ballNode = BallNode(size: ballSize, padleRect: padleNode.frame)
         let ballEntity = BallEntity(node: ballNode)
         self.playScene.addChild(ballNode)
         

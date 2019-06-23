@@ -11,14 +11,16 @@ import SpriteKit
 
 class BallNode : SKShapeNode {
     
-    init(size: CGSize) {
+    init(size: CGSize, padleRect: CGRect) {
         super.init()
         let rec = CGRect(x:0, y:0, width:size.width, height:size.height)
         let corners: UIRectCorner = [UIRectCorner.topLeft, UIRectCorner.topRight, UIRectCorner.bottomLeft, UIRectCorner.bottomRight]
-        self.path = UIBezierPath(roundedRect: rec, byRoundingCorners: corners, cornerRadii: CGSize(width: size.width / 2, height: size.height / 2)).cgPath
+        let radius = size.width / 2
+        self.path = UIBezierPath(roundedRect: rec, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
         self.fillColor = UIColor.blue
         self.strokeColor = UIColor.blue
-        let physicsBody = SKPhysicsBody(circleOfRadius: 100)
+        self.position = CGPoint(x: padleRect.midX, y: padleRect.midY + radius);
+        let physicsBody = SKPhysicsBody(circleOfRadius: radius)
         physicsBody.affectedByGravity = false
         physicsBody.linearDamping = 0
         physicsBody.restitution = 1

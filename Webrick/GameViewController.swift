@@ -43,7 +43,7 @@ class GameViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let myURL = URL(string:"https://www.apple.com")
+        let myURL = URL(string:"https://www.google.com/")
         let myRequest = URLRequest(url: myURL!)
         self.webView.load(myRequest)
         
