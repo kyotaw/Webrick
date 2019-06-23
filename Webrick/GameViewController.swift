@@ -42,28 +42,25 @@ class GameViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let myURL = URL(string:"https://www.apple.com")
         let myRequest = URLRequest(url: myURL!)
         self.webView.load(myRequest)
-
-        let skview = SKView(frame: self.view.bounds)
-        // Load the SKScene from 'GameScene.sks'
-        if let scene = SKScene(fileNamed: "GameScene") {
-            // Set the scale mode to scale to fit the window
-            scene.scaleMode = .aspectFill
-            
-            // Present the scene
-            skview.presentScene(scene)
-        }
         
+        let stateRect: CGRect = UIScreen.main.bounds
+        self.game = WebrickGame(stageRect: stateRect)
+        
+        let skview = SKView()
+        let viewSize = UIScreen.main.bounds.size
+        let viewRect = CGRect(x: 0, y: 0, width: viewSize.width, height: viewSize.height)
+        skview.frame = viewRect
+        skview.presentScene(self.game.playScene)
         skview.ignoresSiblingOrder = true
-        
         skview.showsFPS = true
         skview.showsNodeCount = true
         skview.allowsTransparency = true
+
         self.view.addSubview(skview)
-    
     }
 
     override var shouldAutorotate: Bool {
@@ -96,4 +93,6 @@ class GameViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, 
     }
     
     var webView: WKWebView!
+    var skView: SKView!
+    var game: WebrickGame!
 }
