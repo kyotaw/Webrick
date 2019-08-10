@@ -21,25 +21,9 @@ class MoveComponent: GKComponent {
     }
     
     func move(vector: CGVector) {
-        self.node.physicsBody?.velocity = vector
-        //self.node.position.x += vector.dxs
-        //self.node.position.y += vector.dy
-        
-        /*
-        if self.node.frame.minX < self.border.minX {
-            self.node.position.x += (self.border.minX - self.node.frame.minX)
-        }
-        let nx = self.node.position.x
-        let x = self.node.frame.maxX
-        if self.border.maxX < self.node.frame.maxX {
-            self.node.position.x -= (self.node.frame.maxX - self.border.maxX)
-        }
-        if self.node.frame.minY < self.border.minY {
-            self.node.position.y += (self.border.minY - self.node.frame.minY)
-        }
-        if self.border.maxY < self.node.frame.maxY {
-            self.node.position.y -= (self.node.frame.maxY - self.border.maxY)
-        }*/
+        print(self.node.physicsBody?.velocity)
+        self.node.physicsBody?.velocity.dx *= 1.001
+        self.node.physicsBody?.velocity.dy *= 1.001
     }
     
     let node: SKNode

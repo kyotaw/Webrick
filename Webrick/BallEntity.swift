@@ -14,6 +14,7 @@ class BallEntity: GKEntity {
     init(node: BallNode) {
         self.node = node
         super.init()
+        self.node.entity = self
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: "Ball"))
         self.addComponent(spriteComponent)
         let moveComponent = MoveComponent(node: node)

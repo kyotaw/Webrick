@@ -36,39 +36,23 @@ function isValid(rect) {
 
 class Block {
     
-    constructor(qElem, rect) {
+    constructor(id, qElem, rect) {
+        this.id = 'webrick-block-id-' + id;
         this.qElem = qElem;
         this.rect = rect;
+        this.qElem.addClass(this.id)
     }
 
     toggleBorder() {
-        this.qElem.toggleClass('webbreaker-border');
+        this.qElem.toggleClass('webrick-border');
     }
     
     toDict() {
         return {
-            rect: this.rect
+            id: this.id,
+            rect: this.rect,
+            content: this.qElem.text()
         }
-    }
-}
-
-class Bar {
-
-    constructor() {
-        function createBar(){
-        var barElem = document.createElement('scrollbar');
-        barElem.setAttribute('id', 'kasumi-bar', '');
-        barElem.setAttribute('maxpos', 100, '');
-        barElem.setAttribute('curpos', 50, '');
-        barElem.setAttribute('width', window.innerWidth, '');
-        var barBox = document.createElement('hbox');
-        barBox.setAttribute('width', '1000', '');
-        barBox.appendChild(barElem);
-        barBox.style.zIndex = '5';
-        document.getElementById('appcontent').insertBefore(barBox, document.getElementById('statusbar-display'));
-        bar = new Bar(barElem);
-    };  
-
     }
 }
 
@@ -78,10 +62,14 @@ class Stage {
         this.rect = rect;
         this.blocks = [];
         this.doc = doc;
+        this.curBlockId = 0;
     }
     
     build(rootNode) {
         rootNode.contents().each((i, node) => {
+            if ($(node).is(':hidden')) {
+                return;
+            }
             if (node.nodeType === node.TEXT_NODE) {
                 let rect = getTextRect(node);
                 if (isValid(rect)) {
@@ -96,9 +84,10 @@ class Stage {
                             right: qChar.offset().left + qChar.width(),
                             bottom: qChar.offset().top + qChar.height()
                         }
-                        let block = new Block(qChar, rect);
+                        let block = new Block(this.curBlockId, qChar, rect);
                         block.toggleBorder();
                         this.blocks.push(block);
+                        this.curBlockId += 1;
                     });
                 }
             } else {

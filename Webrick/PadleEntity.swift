@@ -15,6 +15,7 @@ class PadleEntity : GKEntity {
     init(node: PadleNode) {
         self.node = node
         super.init()
+        self.node.entity = self
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: "Padle"))
         self.addComponent(spriteComponent)
         let moveComponent = MoveComponent(node: node)

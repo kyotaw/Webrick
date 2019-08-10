@@ -18,7 +18,6 @@
 		6D1F5F172298337E0003A819 /* WebrickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F5F162298337E0003A819 /* WebrickUITests.swift */; };
 		6D1F5F28229843150003A819 /* js in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F5F24229843140003A819 /* js */; };
 		6D1F5F2A229843150003A819 /* JsHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F5F26229843140003A819 /* JsHandlers.swift */; };
-		6D1F5F2D2298E6B50003A819 /* PlayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F5F2C2298E6B50003A819 /* PlayScene.sks */; };
 		6D5B1B0C229982670075F00E /* PadleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B1B0B229982670075F00E /* PadleEntity.swift */; };
 		6D5B1B0E22998E470075F00E /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B1B0D22998E470075F00E /* SpriteComponent.swift */; };
 		6D5B1B12229AAB940075F00E /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B1B11229AAB940075F00E /* MoveComponent.swift */; };
@@ -26,6 +25,10 @@
 		6D5B1B16229ABCF50075F00E /* BallEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B1B15229ABCF50075F00E /* BallEntity.swift */; };
 		6DD8A88922BE28CA00CA2FBC /* PadleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8A88822BE28CA00CA2FBC /* PadleNode.swift */; };
 		6DD8A88B22BE2AAD00CA2FBC /* BallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8A88A22BE2AAD00CA2FBC /* BallNode.swift */; };
+		6DD8A88D22BF79A700CA2FBC /* BlockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8A88C22BF79A700CA2FBC /* BlockNode.swift */; };
+		6DD8A88F22BF869800CA2FBC /* StageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8A88E22BF869800CA2FBC /* StageResponse.swift */; };
+		6DD8A89122BFC00200CA2FBC /* BlockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8A89022BFC00200CA2FBC /* BlockEntity.swift */; };
+		6DD8A89322BFC09100CA2FBC /* LifeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8A89222BFC09100CA2FBC /* LifeComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +66,6 @@
 		6D1F5F182298337E0003A819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D1F5F24229843140003A819 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		6D1F5F26229843140003A819 /* JsHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsHandlers.swift; sourceTree = "<group>"; };
-		6D1F5F2C2298E6B50003A819 /* PlayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlayScene.sks; sourceTree = "<group>"; };
 		6D5B1B0B229982670075F00E /* PadleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadleEntity.swift; sourceTree = "<group>"; };
 		6D5B1B0D22998E470075F00E /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		6D5B1B11229AAB940075F00E /* MoveComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveComponent.swift; sourceTree = "<group>"; };
@@ -71,6 +73,10 @@
 		6D5B1B15229ABCF50075F00E /* BallEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallEntity.swift; sourceTree = "<group>"; };
 		6DD8A88822BE28CA00CA2FBC /* PadleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadleNode.swift; sourceTree = "<group>"; };
 		6DD8A88A22BE2AAD00CA2FBC /* BallNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallNode.swift; sourceTree = "<group>"; };
+		6DD8A88C22BF79A700CA2FBC /* BlockNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockNode.swift; sourceTree = "<group>"; };
+		6DD8A88E22BF869800CA2FBC /* StageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageResponse.swift; sourceTree = "<group>"; };
+		6DD8A89022BFC00200CA2FBC /* BlockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockEntity.swift; sourceTree = "<group>"; };
+		6DD8A89222BFC09100CA2FBC /* LifeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +130,6 @@
 				6D1F5EF42298337B0003A819 /* Actions.sks */,
 				6D1F5EF02298337B0003A819 /* AppDelegate.swift */,
 				6D1F5EFD2298337E0003A819 /* Assets.xcassets */,
-				6D1F5F2C2298E6B50003A819 /* PlayScene.sks */,
 				6D1F5EF62298337B0003A819 /* PlayScene.swift */,
 				6D1F5EF82298337B0003A819 /* GameViewController.swift */,
 				6D1F5F022298337E0003A819 /* Info.plist */,
@@ -139,6 +144,10 @@
 				6D5B1B15229ABCF50075F00E /* BallEntity.swift */,
 				6DD8A88822BE28CA00CA2FBC /* PadleNode.swift */,
 				6DD8A88A22BE2AAD00CA2FBC /* BallNode.swift */,
+				6DD8A88C22BF79A700CA2FBC /* BlockNode.swift */,
+				6DD8A88E22BF869800CA2FBC /* StageResponse.swift */,
+				6DD8A89022BFC00200CA2FBC /* BlockEntity.swift */,
+				6DD8A89222BFC09100CA2FBC /* LifeComponent.swift */,
 			);
 			path = Webrick;
 			sourceTree = "<group>";
@@ -267,7 +276,6 @@
 			files = (
 				6D1F5EFC2298337B0003A819 /* Main.storyboard in Resources */,
 				6D1F5F28229843150003A819 /* js in Resources */,
-				6D1F5F2D2298E6B50003A819 /* PlayScene.sks in Resources */,
 				6D1F5EFE2298337E0003A819 /* Assets.xcassets in Resources */,
 				6D1F5F012298337E0003A819 /* LaunchScreen.storyboard in Resources */,
 				6D1F5EF52298337B0003A819 /* Actions.sks in Resources */,
@@ -298,12 +306,16 @@
 				6D5B1B12229AAB940075F00E /* MoveComponent.swift in Sources */,
 				6D5B1B0C229982670075F00E /* PadleEntity.swift in Sources */,
 				6D1F5EF72298337B0003A819 /* PlayScene.swift in Sources */,
+				6DD8A88D22BF79A700CA2FBC /* BlockNode.swift in Sources */,
 				6D5B1B16229ABCF50075F00E /* BallEntity.swift in Sources */,
 				6D1F5EF92298337B0003A819 /* GameViewController.swift in Sources */,
 				6D1F5F2A229843150003A819 /* JsHandlers.swift in Sources */,
 				6DD8A88B22BE2AAD00CA2FBC /* BallNode.swift in Sources */,
 				6D5B1B14229AB7350075F00E /* WebrickGame.swift in Sources */,
+				6DD8A89122BFC00200CA2FBC /* BlockEntity.swift in Sources */,
+				6DD8A88F22BF869800CA2FBC /* StageResponse.swift in Sources */,
 				6D5B1B0E22998E470075F00E /* SpriteComponent.swift in Sources */,
+				6DD8A89322BFC09100CA2FBC /* LifeComponent.swift in Sources */,
 				6DD8A88922BE28CA00CA2FBC /* PadleNode.swift in Sources */,
 				6D1F5EF12298337B0003A819 /* AppDelegate.swift in Sources */,
 			);
@@ -487,7 +499,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.httg1326.Webrick;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.httg1326;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -505,7 +517,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.httg1326.Webrick;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.httg1326;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

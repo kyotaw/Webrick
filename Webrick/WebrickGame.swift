@@ -9,45 +9,96 @@
 import Foundation
 import GameplayKit
 
+protocol WebrickGameDelegate {
+    func destroyedBlock(jsBlock: JSBlock)
+}
 
-class WebrickGame: NSObject, SKSceneDelegate {
+
+class WebrickGame: NSObject, SKSceneDelegate, SKPhysicsContactDelegate {
     init(stageRect: CGRect) {
+        self.stageRect = stageRect
         let stageSize = CGSize(width: stageRect.width, height: stageRect.height)
-        // load scene
+        // scene
         self.playScene = PlayScene(size: stageSize)
         
-        // load padle
-        let padleSize = CGSize(width: stageSize.width / 5, height: stageSize.height / 20)
+        // padle
+        let padleSize = CGSize(width: stageSize.width / 5, height: stageSize.height / 30)
         let padleNode = PadleNode(size: padleSize, stageRect: stageRect)
-        let padleEntity = PadleEntity(node: padleNode)
+        self.padleEntity = PadleEntity(node: padleNode)
         self.playScene.addChild(padleNode)
         
-        // load ball
-        let ballSize = CGSize(width: 100, height: 100)
+        // ball
+        let ballSize = CGSize(width: 30, height: 30)
         let ballNode = BallNode(size: ballSize, padleRect: padleNode.frame)
-        let ballEntity = BallEntity(node: ballNode)
+        self.ballEntity = BallEntity(node: ballNode)
         self.playScene.addChild(ballNode)
         
+        // block
+        self.blockEntities = []
+        
         self.spriteComponentSystem = GKComponentSystem(componentClass: SpriteComponent.self)
-        self.spriteComponentSystem.addComponent(foundIn: padleEntity)
-        self.spriteComponentSystem.addComponent(foundIn: ballEntity)
         self.moveComponentSystem = GKComponentSystem(componentClass: MoveComponent.self)
-        self.moveComponentSystem.addComponent(foundIn: padleEntity)
-        self.moveComponentSystem.addComponent(foundIn: ballEntity)
+        self.lifeComponentSystem = GKComponentSystem(componentClass: LifeComponent.self)
         
         super.init()
+        self.spriteComponentSystem.addComponent(foundIn: self.padleEntity)
+        self.spriteComponentSystem.addComponent(foundIn: self.ballEntity)
+        self.moveComponentSystem.addComponent(foundIn: self.padleEntity)
+        self.moveComponentSystem.addComponent(foundIn: self.ballEntity)
         self.playScene.delegate = self
+        self.playScene.physicsWorld.contactDelegate = self
     }
     
-    func update(_ currentTime: TimeInterval, for scene: SKScene) {
-        for move in self.moveComponentSystem.components {
-            let vec = CGVector(dx:100, dy: 30)
-            move.move(vector: vec)
+    func addBlocks(blocks: Array<JSBlock>) {
+        for block in blocks {
+            let blockNode = BlockNode(jsBlock: block)
+            self.playScene.addChild(blockNode)
+            let blockEntity = BlockEntity(node: blockNode)
+            self.lifeComponentSystem.addComponent(foundIn: blockEntity)
+            self.blockEntities.append(blockEntity)
         }
+    }
+    
+    // SKSceneDelegate
+    func update(_ currentTime: TimeInterval, for scene: SKScene) {
         //self.moveComponentSystem.update(deltaTime: currentTime)
     }
+    
+    // SKPhysicsContactDelegate
+    func didBegin(_ contact: SKPhysicsContact) {
+        switch contact.bodyA.categoryBitMask {
+        case ballCategory:
+            if contact.bodyB.categoryBitMask == blockCategory {
+                let ball = contact.bodyA.node?.entity as! BallEntity
+                let block = contact.bodyB.node?.entity as! BlockEntity
+                block.crash(ball: ball)
+                if block.isDead {
+                    block.destroy()
+                    self.delegate?.destroyedBlock(jsBlock: block.node.jsBlock)
+                }
+            }
+        case blockCategory:
+            if contact.bodyB.categoryBitMask == ballCategory {
+                let ball = contact.bodyB.node?.entity as! BallEntity
+                let block = contact.bodyA.node?.entity as! BlockEntity
+                block.crash(ball: ball)
+                if block.isDead {
+                    block.destroy()
+                    self.delegate?.destroyedBlock(jsBlock: block.node.jsBlock)
+                }
+            }
+        default:
+            break
+        }
+    }
 
-    var playScene: PlayScene
+    let stageRect: CGRect
+    let playScene: PlayScene
+    let padleEntity: PadleEntity
+    let ballEntity: BallEntity
+    var blockEntities: [BlockEntity]
     let spriteComponentSystem: GKComponentSystem<SpriteComponent>
     let moveComponentSystem: GKComponentSystem<MoveComponent>
+    let lifeComponentSystem: GKComponentSystem<LifeComponent>
+    var delegate: WebrickGameDelegate?
 }
